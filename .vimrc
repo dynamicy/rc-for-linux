@@ -60,17 +60,17 @@ hi Error            term=reverse  cterm=bold  ctermfg=7  ctermbg=1
 hi Todo             term=standout  ctermfg=0  ctermbg=3
 
 " Folding function
-function! Num2S(num, len)
-    let filler = "                                                            "
+function! CountFunction(num, len)
+    let filler = ""
     let text = '' . a:num
     return strpart(filler, 1, a:len - strlen(text)) . text
 endfunction
 
-function! FoldText()
+function! FoldFunction()
     let sub = substitute(getline(v:foldstart), '/\*\|\*/\|{{{\d\=', '', 'g')
     let diff = v:foldend - v:foldstart + 1
-    return  '+' . v:folddashes . '[' . Num2S(diff,3) . ']' 
+    return  '+' . v:folddashes . '[' . CountFunction(diff,3) . ']' 
  . sub
 endfunction
 
-set foldtext=FoldText()
+set foldtext=FoldFunction()
