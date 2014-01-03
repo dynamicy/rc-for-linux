@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application>
+  <component name="StatisticsApplicationUsages">
+    <group name="language-level">
+      <project id="id3learner" values="JDK_1_6" />
+      <project id="JDM" values="JDK_1_6" />
+    </group>
+    <group name="vcs">
+      <project id="id3learner" values="Git" />
+      <project id="JDM" values="Git" />
+    </group>
+    <group name="module type">
+      <project id="id3learner" values="JAVA_MODULE" />
+      <project id="JDM" values="JAVA_MODULE" />
+    </group>
+    <group name="file-type">
+      <project id="id3learner" values="CLASS,XML,UNKNOWN,IDEA_MODULE,Native,JAVA,PLAIN_TEXT" />
+      <project id="JDM" values="UNKNOWN,JAVA,XML,IDEA_MODULE,PLAIN_TEXT,GUI_DESIGNER_FORM,Native" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="id3learner" values="Application" />
+      <project id="JDM" values="Application" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="id3learner" values="DEFAULT" />
+      <project id="JDM" values="DEFAULT" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="id3learner" values="Project,Project" />
+      <project id="JDM" values="Project,Project" />
+    </group>
+  </component>
   <component name="UsageTrigger">
     <counts>
-      <entry feature="execute.Application.Run" count="26" />
+      <entry feature="execute.Application.Run" count="75" />
     </counts>
   </component>
 </application>

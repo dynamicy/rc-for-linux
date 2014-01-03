@@ -15,7 +15,7 @@ set cindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
+"set expandtab
 
 set ruler               " show the cursor position all the time
 set wrap
