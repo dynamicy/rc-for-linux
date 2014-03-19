@@ -9,7 +9,7 @@ export SVN_EDITOR="vim"
 export GIT_EDITOR="vim"
 
 #set path
-export PATH=/opt/local/bin:~/stm32-toolchain/bin:/usr/local/idea-IU-133.331/bin:/opt/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/mysql/bin:/usr/local/android-studio/bin:/usr/local/android-ndk-r9b:/usr/local/Aptana_Studio_3:/usr/local/MATLAB/R2013a/bin:$PATH
+export PATH=/opt/intel/inspector_xe/bin64:/opt/intel/vtune_amplifier_xe/bin64:/opt/local/bin:~/stm32-toolchain/bin:/usr/local/idea-IU-133.331/bin:/opt/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/mysql/bin:/usr/local/android-studio/bin:/usr/local/android-ndk-r9b:/usr/local/Aptana_Studio_3:/usr/local/MATLAB/R2013a/bin:$PATH
 
 #enables color in the terminal bash shell
 export CLICOLOR=1
