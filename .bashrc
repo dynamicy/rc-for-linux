@@ -28,6 +28,7 @@ alias ls='ls -G'
 alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lw='ls | wc -l'
 
 # If not running interactively, don't do anything
 case $- in
