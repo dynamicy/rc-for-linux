@@ -18,7 +18,7 @@ export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 #sets up the prompt color (currently a green similar to linux terminal)
-export PS1="\\[$(tput setaf 1)\\]\\u@\\h:\\w $\\[$(tput sgr0)\\]"
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 #enables color for iTerm
 export TERM=xterm-color
