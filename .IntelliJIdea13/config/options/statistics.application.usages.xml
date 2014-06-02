@@ -18,8 +18,8 @@
       <project id="JDM" values="Application" />
     </group>
     <group name="file-type">
-      <project id="id3learner" values="IDEA_MODULE,PLAIN_TEXT,UNKNOWN,XML,Native,CLASS,JAVA" />
-      <project id="JDM" values="PLAIN_TEXT,IDEA_MODULE,UNKNOWN,Native,JAVA,XML,GUI_DESIGNER_FORM" />
+      <project id="id3learner" values="IDEA_MODULE,XML,JAVA,UNKNOWN,Native,PLAIN_TEXT,CLASS" />
+      <project id="JDM" values="PLAIN_TEXT,XML,JAVA,UNKNOWN,GUI_DESIGNER_FORM,IDEA_MODULE,Native" />
     </group>
     <group name="javaScript Scope Usages">
       <project id="id3learner" values="Project,Project" />
