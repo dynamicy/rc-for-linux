@@ -1,16 +1,8 @@
-#
-# Example of a user's .screenrc file
-#
-
-# This is how one can set a reattach password:
-# password ODSJQf.4IJN7E    # "1234"
-
 # no annoying audible bell, please
 vbell off
 vbell_msg " *beep* "
 activity              "activity in %n (%t) [%w:%s]"
 bell                  "%{=b y}ping! %n (%t) [%w:%s]^G"
-
 
 # detach on hangup
 autodetach on
@@ -80,7 +72,6 @@ termcapinfo xterm ut
 #
 # wyse terminals
 #
-
 #wyse-75-42 must have flow control (xo = "terminal uses xon/xoff")
 #essential to have it here, as this is a slow terminal.
 termcapinfo wy75-42 xo:hs@
@@ -100,12 +91,10 @@ termcapinfo  hp700 'Z0=\E[?3h:Z1=\E[?3l:hs:ts=\E[62"p\E[0$~\E[2$~\E[1$}:fs=\E[0}
 termcap  vt100* ms:AL=\E[%dL:DL=\E[%dM:UP=\E[%dA:DO=\E[%dB:LE=\E[%dD:RI=\E[%dC
 terminfo vt100* ms:AL=\E[%p1%dL:DL=\E[%p1%dM:UP=\E[%p1%dA:DO=\E[%p1%dB:LE=\E[%p1%dD:RI=\E[%p1%dC
 
-
 ################
 #
 # keybindings
 #
-
 #remove some stupid / dangerous key bindings
 #bind k
 #bind ^k
@@ -133,7 +122,6 @@ bind ^] paste [.]
 #
 # default windows
 #
-
 # screen -t local 0
 # screen -t mail 1 elm
 # screen -t 40 2 rlogin faui40
@@ -154,8 +142,6 @@ defc1 off
 #encoding big5 big5
 ############ END OF Big5 #############
 silence 300 "+"
-
-
 
 hardstatus alwayslastline "%{=b c} %m/%d %c %{-}| %-Lw%{=b y}%50L>%n%f [%t]%{-}%+Lw%<"
 sorendition = bc
