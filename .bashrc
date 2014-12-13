@@ -133,3 +133,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+#set JAVA_HOME seperately
+export JAVA_7_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JAVA_6_HOME=/usr/lib/jvm/java-6-openjdk-amd64
+
+#set default JAVA_HOME
+export JAVA_HOME=$JAVA_7_HOME
