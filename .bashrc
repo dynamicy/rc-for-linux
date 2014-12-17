@@ -3,7 +3,7 @@
 # for examples
 
 #set path
-export PATH=/usr/local/pycharm/bin:/opt/local/bin:/usr/local/idea-IU/bin:/opt/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/mysql/bin:/usr/local/android-studio/bin:/usr/local/android-ndk-r9b:$PATH
+export PATH=/opt/local/bin:/usr/local/idea-IU/bin:/opt/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/mysql/bin:$PATH
 
 #set svn default editor
 export SVN_EDITOR="vim"
@@ -134,9 +134,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#set JAVA_HOME seperately
-export JAVA_7_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+#set JAVA_HOME separately
+export JAVA_7_HOME=/usr/lib/jvm/jdk1.7.0_71
 export JAVA_6_HOME=/usr/lib/jvm/java-6-openjdk-amd64
 
 #set default JAVA_HOME
 export JAVA_HOME=$JAVA_7_HOME
+
+# JRE_HOME separately
+export JRE_7_HOME=/usr/lib/jvm/jdk1.7.0_71/jre
+
+#set default JRE_HOME
+export JRE_HOME=$JRE_7_HOME
+
+#set CLASSPATH
+export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$JAVA_HOME/lib/tools.jar
