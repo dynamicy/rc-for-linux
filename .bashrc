@@ -2,37 +2,17 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-#set path
-export PATH=/opt/local/bin:/usr/local/idea-IU/bin:/opt/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/mysql/bin:$PATH
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 #set svn default editor
 export SVN_EDITOR="vim"
 
 #set svn default editor
 export GIT_EDITOR="vim"
-
-#enables color in the terminal bash shell
-export CLICOLOR=1
-
-#sets up the color scheme for list
-export LSCOLORS=gxfxcxdxbxegedabagacad
-
-#enables color for iTerm
-export TERM=xterm-color
-
-#sets up proper alias commands when called
-alias ls='ls -G'
-alias ll='ls -ahlF'
-alias la='ls -A'
-alias l='ls -CF'
-alias lw='ls | wc -l'
-alias df='df -h'
-
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -44,6 +24,38 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
+
+#enables color in the terminal bash shell
+export CLICOLOR=1
+
+# Custom $PS1
+RED='\[\e[0;31m\]'
+BRED='\[\e[1;31m\]'
+BLUE='\[\e[0;34m\]'
+BBLUE='\[\e[1;34m\]'
+CYAN='\[\e[0;36m\]'
+BCYAN='\[\e[1;36m\]'
+NC='\[\e[0m\]'
+BLACK='\[\e[0;30m\]'
+BBLACK='\[\e[1;30m\]'
+GREEN='\[\e[0;32m\]'
+BGREEN='\[\e[1;32m\]'
+YELLOW='\[\e[0;33m\]'
+BYELLOW='\[\e[1;33m\]'
+MAGENTA='\[\e[0;35m\]'
+BMAGENTA='\[\e[1;35m\]'
+WHITE='\[\e[0;37m\]'
+BWHITE='\[\e[1;37m\]'
+
+function parse_git_branch {     
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
+
+#sets up the color scheme for list
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+#sets up the prompt color (currently a green similar to linux terminal)
+PS1="$CYAN\$(date +%H:%M) $YELLOW[$BLUE\u@\h:$RED\w$YELLOW]$NC\n$YELLOW\$(parse_git_branch)$NC% " 
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -66,29 +78,6 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -109,6 +98,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -133,19 +127,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-#set JAVA_HOME separately
-export JAVA_7_HOME=/usr/lib/jvm/jdk1.7.0_71
-export JAVA_6_HOME=/usr/lib/jvm/java-6-openjdk-amd64
-
-#set default JAVA_HOME
-export JAVA_HOME=$JAVA_7_HOME
-
-# JRE_HOME separately
-export JRE_7_HOME=/usr/lib/jvm/jdk1.7.0_71/jre
-
-#set default JRE_HOME
-export JRE_HOME=$JRE_7_HOME
-
-#set CLASSPATH
-export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$JAVA_HOME/lib/tools.jar
