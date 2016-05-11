@@ -8,6 +8,9 @@ case $- in
       *) return;;
 esac
 
+#set path
+export PATH=/usr/local/android-studio/bin:$PATH
+
 #set svn default editor
 export SVN_EDITOR="vim"
 
